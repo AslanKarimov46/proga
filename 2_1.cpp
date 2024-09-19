@@ -11,7 +11,8 @@ enum class Color{
 
 
 struct Point{
-	double x=0.0;
+	int array[10]={10, 10};
+	double apple=1.0;
 	double y=0.0;
 	double z=0.0;
 	Color color;		
