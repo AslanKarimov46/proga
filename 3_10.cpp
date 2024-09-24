@@ -31,10 +31,10 @@ int main(){
 	}
 	//std::cout<<dates[1].year<<"\n";
 	//bool z=dates[0]<dates[1];
-	/*if(z==true)
+	if(z==true)
 		std::cout<<"1"<<"\n";
 	else
-		std::cout<<"0"<<"\n";*/
+		std::cout<<"0"<<"\n";
 	std::sort(dates.begin(), dates.end(), [](const Date& lhs, const Date& rhs){
 		return std::tie(lhs.year, lhs.month, lhs.day)<std::tie(rhs.year, rhs.month, rhs.day);});
 	for(const auto& [year, month, day]:dates){
