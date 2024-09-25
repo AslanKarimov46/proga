@@ -14,6 +14,6 @@ int main(){
 	Triple<int, int, int> point {-1, 3, 2};
 	Triple<std::string, std::string, int> sth {"hello", "world", 42};
 	
-	
+	std::cout<<sth.second<<"\n";
 return 0;	
 }
