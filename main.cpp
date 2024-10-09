@@ -1,4 +1,5 @@
 #include "time.h"
+#include <iostream>
 
 int main(){
 	
@@ -10,7 +11,7 @@ int main(){
 	//std::cout<<t3.GetHours()<<" "<<t3.GetMinutes()<<" "<<t3.GetSeconds()<<"\n";
 	chron::Time t;
 	//std::cout<<t.GetHours()<<" "<<t.GetMinutes()<<" "<<t.GetSeconds()<<"\n";
-	std::cout<<t1-t2<<"\n";
+	//std::cout<<t1-t2<<"\n";
 	
 	return 0;	
 }

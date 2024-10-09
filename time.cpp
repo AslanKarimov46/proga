@@ -1,6 +1,5 @@
 #include "time.h"
 
-
 using namespace chron;
 
 void Time::normalise(){
@@ -63,11 +62,10 @@ int operator-(const Time& t1, const Time& t2){
 	return t1.TotalSeconds()-t2.TotalSeconds();
 }
 
-std::ostream& operator<<(std::ostream& out, const Time& t){
+std::ostream& operator<<(std::ostream& out, const chron::Time& t){
 	out<<t.GetHours()<<" "<<t.GetMinutes()<<" "<<t.GetSeconds();
 	return out;
 }
-
 
 
 
