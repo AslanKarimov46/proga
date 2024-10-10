@@ -26,5 +26,8 @@ namespace chron{
 }
 int operator-(const chron::Time& t1, const chron::Time& t2);
 std::ostream& operator<<(std::ostream& out, const chron::Time& t);
+<<<<<<< HEAD:proj1/time.h
 std::istream& operator>>(std::istream& in,  chron::Time& t);
+=======
+>>>>>>> 0672ed3eafab245cebe677047ef77e25e6364884:time.h
 #endif 
