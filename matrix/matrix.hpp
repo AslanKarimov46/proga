@@ -1,17 +1,22 @@
+#ifndef MATRIX_H
+#define MATRIX_H
 #include "matrix.h"
-#ifndef MATRIX_HPP
-#define MATRIX_HPP
+#include <iostream>
+#include <stdexcept>
 
+template <typename T>
 size_t Matrix<T>::GetRows() const{
 	return data.size();
 }
 
+template <typename T>
 size_t Matrix<T>::GetColumns() const{
 	if(data.empty())
 		return 0;
 	return data[0].size();
 }
 
+template <typename T>
 void Make_Rectangle(){
 	int MaxSize;
 	for(const auto& row:data){
@@ -21,3 +26,76 @@ void Make_Rectangle(){
 	for(auto& row:data)
 		row.resize(MaxSize);
 }
+
+/*
+template <typename T>
+const std::vector<T> &Matrix<T>::operator [] (size_t i) const{
+	return data[i];
+}*/
+
+template <typename T>
+const T& Matrix<T>::operator() (size_t i, size_t j) const{
+	return data[i][j];
+}
+
+/*template <typename T>
+const_iterator Matrix<T>::begin() const{
+	return data.begin();
+}*/
+
+template <typename T>
+std::ostream& operator<< (std::ostream& out, const Matrix<T>& matrix){
+	const size_t rows=matrix.GetRows();
+	const size_t columns=matrix.GetColumns();
+	for(size_t i=0; i!=rows; i++){
+		for(size_t j=0; j!=columns; j++){
+			if(j>0)
+				out<<"\t";
+			out<<matrix(i,j);
+		}
+		out<<"\n";
+	}
+return out;
+}
+
+template <typename T>
+std::istream& operator>> (std::istream& out, const Matrix<T>& matrix){
+	const size_t rows=matrix.GetRows();
+	const size_t columns=matrix.GetColumns();
+	
+	for(size_t i=0; i!=rows; i++){
+		for(size_t j=0; j!=columns; j++)
+			in>>matrix(i,j);
+	}
+return in;
+}
+
+template <typename T>
+Matrix<T>& operator +=(const Matrix<T>& other){
+	const size_t rows=matrix.GetRows();
+	const size_t columns=matrix.GetColumns();
+	if(rows!=other.GetRows() || columns!=other.GetColumns())
+		throw std::invalid_argument("Different sizes");
+	for(size_t i=0; i!=rows; i++){
+		for(size_t j=0; j!=columns; j++)
+			data[i][j]+=other.data[i][j];
+	}
+return *this;
+}
+
+#endif //matrix_hpp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
