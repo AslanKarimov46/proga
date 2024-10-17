@@ -83,7 +83,42 @@ Matrix<T>& operator +=(const Matrix<T>& other){
 return *this;
 }
 
+template <typename T>
+Matrix<T> operator+ (const Matrix<T>& m1; const Matrix<T>& m2){
+	auto tmp {m1};
+	tmp+=m2;
+	return tmp;
+}
+
+template <typename T1>
+bool operator== (const Matrix<T1>& other)const{
+	const size_t rows=matrix.GetRows();
+	const size_t columns=matrix.GetColumns();
+	if(rows!=other.GetRows() || columns!=other.GetColumns())
+		return false;
+	for(size_t i=0; i!=rows; i++){
+		for(size_t j=0; j!=columns; j++){
+			if(!((*this)(i, j)==other(i, j)))
+				return false;
+		}
+	}
+return true;
+}
+
+template <typename T1, typename T2>
+bool operator!=(const Matrix<T1>& m1, const Matrix<T2>& m2){
+	return !(m1==m2);
+}
+
 #endif //matrix_hpp
+
+
+
+
+
+
+
+
 
 
 
