@@ -9,43 +9,20 @@ private:
 	std::vector<std::vector<T>> data;
 	void Make_Rectangle();
 public:
+	Matrix(const std::vector<std::vector<T>> &d): data {d} {
+		makerectangle();
+	}
 	size_t GetRows() const;
 	size_t GetColumns() const;
-	t
-	void Matrix<T>::Make_Rectangle();
+	const T &operator () (size_t i, size_t j) const;
+	//using const_iterator=decltype(data.cbegin());
+	//const_iterator cbegin() const;
+	//const_iterator cend() const;
+	Matrix<T> &Matrix::operator +=(const Matrix<T>& other)
 };
-
+template <typename T>
+std::ostream& operator<< (std::ostream& out, const Matrix<T>& matrix);
+template <typename T>
+std::istream& operator>> (std::istream& in, const Matrix<T>& matrix);
 
 #endif		//MATRIX_M
-
-
-template <typename T>
-class Matrix{
-	private:
-		std::vector<std::vector<T>> data;
-		void MakeRectangle();
-	public:
-		size_t GetRows() const;
-		size_t GetColumns() const;
-		Matrix(const std::vector<std::vector<T>>& d): data {d}{
-			MakeRectangle();
-		}
-		Matrix(size_t rows, size_t columns){
-			data.resize(rows);
-			for(auto& row: data){
-				row.resize(columns);
-			}
-		}
-		/*const std::vector<T>& operator[] (size_t i) const{
-			return data[i];
-		}
-		std::vector<T>& operator[] (size_t i){
-			return data[i];
-		}*/
-		T& operator() (size_t i, size_t j);
-		const T& operator() (size_t i, size_t j) const;
-	};
-	
-
-#include "matrix.hpp"
-#endif //MATRIX_H
