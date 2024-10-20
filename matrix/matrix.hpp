@@ -1,49 +1,39 @@
-#ifndef MATRIX_H
-#define MATRIX_H
+#ifndef MATRIX_HPP
+#define MATRIX_HPP
 #include "matrix.h"
 #include <iostream>
 #include <stdexcept>
 
 template <typename T>
 size_t Matrix<T>::GetRows() const{
-	return data.size();
+	return matrix.size();
 }
 
 template <typename T>
 size_t Matrix<T>::GetColumns() const{
-	if(data.empty())
+	if(matrix.empty())
 		return 0;
-	return data[0].size();
+	return matrix[0].size();
 }
 
 template <typename T>
-void Make_Rectangle(){
-	int MaxSize;
-	for(const auto& row:data){
+void Matrix<T>::Make_Rectangle(){
+	int MaxSize=0;
+	for(const std::vector<T>& row :matrix){
 		if(row.size()>MaxSize)
 			MaxSize=row.size();
 	}
-	for(auto& row:data)
+	for(std::vector<T>& row :matrix)
 		row.resize(MaxSize);
 }
 
-/*
 template <typename T>
-const std::vector<T> &Matrix<T>::operator [] (size_t i) const{
-	return data[i];
-}*/
-
-template <typename T>
-const T& Matrix<T>::operator() (size_t i, size_t j) const{
-	return data[i][j];
+const_iterator Matrix<T>::begin() const{
+	return matrix.begin();
 }
 
-/*template <typename T>
-const_iterator Matrix<T>::begin() const{
-	return data.begin();
-}*/
 
-template <typename T>
+/*template <typename T>
 std::ostream& operator<< (std::ostream& out, const Matrix<T>& matrix){
 	const size_t rows=matrix.GetRows();
 	const size_t columns=matrix.GetColumns();
@@ -108,29 +98,7 @@ return true;
 template <typename T1, typename T2>
 bool operator!=(const Matrix<T1>& m1, const Matrix<T2>& m2){
 	return !(m1==m2);
-}
+}*/
 
 #endif //matrix_hpp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

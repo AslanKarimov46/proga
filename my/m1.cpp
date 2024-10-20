@@ -10,7 +10,6 @@ void Person::print(){
 Person::Person(std::string p_name, int p_age){
 	name=p_name;
 	age=p_age;
-	age_check();
 	//std::cout<<"ok\n";
 }
 
@@ -23,6 +22,9 @@ bool Person::Compare_Ages(const Person& p1, const Person& p2){
 }
 
 void Person::age_check(const Person& p){
-	if(p.age>100)
-		std::cout<<"Не ври мне, тебе от силы 38";
+	int age=p.age;
+	if(age>100)
+		std::cout<<"Не ври мне, тебе от силы 83\n";
+	else
+		std::cout<<"Молодец не врешь\n";
 }
