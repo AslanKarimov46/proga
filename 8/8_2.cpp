@@ -5,6 +5,7 @@
 
 
 int main(){
+
 	
 	std::vector<int> vec {12, 45, 65, 14, 12, 45, 789 ,123465, 0, 0, 12};
 	//std::cout<<std::count(vec.begin(), vec.end(), 12)<<"\n";
