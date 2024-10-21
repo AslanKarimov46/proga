@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/ap.dir/main.cpp.o -o ap  -Wl,-rpath,/home/stud-11/Desktop/Aslan/proga/proj1/build libmytime.so 

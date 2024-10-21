@@ -1,0 +1,3 @@
+/home/stud-11/Desktop/Aslan/proga/project21_10/cmake-build-debug/CMakeFiles/project21_10.dir
+/home/stud-11/Desktop/Aslan/proga/project21_10/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/stud-11/Desktop/Aslan/proga/project21_10/cmake-build-debug/CMakeFiles/rebuild_cache.dir
