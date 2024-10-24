@@ -33,7 +33,7 @@ const_iterator Matrix<T>::begin() const{
 }
 
 
-/*template <typename T>
+/template <typename T>
 std::ostream& operator<< (std::ostream& out, const Matrix<T>& matrix){
 	const size_t rows=matrix.GetRows();
 	const size_t columns=matrix.GetColumns();

@@ -1,19 +1,14 @@
-#ifndef LONG_ARITHMETICS_H
-#define LONG_ARITHMETICS_H
 #include <iostream>
 #include <deque>
 #include <cstdint>
+#include <algorithm>
 
+std::deque<uint8_t> operator+(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2);
+bool operator>(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2);
+bool operator<(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2);
+//bool operator==(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2)
+std::ostream& operator<<(std::ostream& out, const std::deque<uint8_t>& num);
+std::istream& operator>>(std::istream& in, std::deque<uint8_t>& num);
+std::deque<uint8_t> operator*(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2);
+std::deque<uint8_t> operator*(const std::deque<uint8_t>& num1, int a);
 
-class huge_numbers{
-private:
-	std::deque<uint8_t> number;
-
-public:
-	huge_numbers(std::deque<uint8_t> num): number{num} {}
-
-};
-
-huge_numbers operator+(const huge_numbers& num1, const huge_numbers& num2); 
-
-#endif 
