@@ -62,13 +62,12 @@ int operator-(const Time& t1, const Time& t2){
 	return t1.TotalSeconds()-t2.TotalSeconds();
 }
 
-<<<<<<< HEAD:proj1/time.cpp
 std::ostream& operator<<(std::ostream& out, const Time& t){
 	out<<t.GetHours()<<":"<<t.GetMinutes()<<":"<<t.GetSeconds();
-=======
+}
+
 std::ostream& operator<<(std::ostream& out, const chron::Time& t){
 	out<<t.GetHours()<<" "<<t.GetMinutes()<<" "<<t.GetSeconds();
->>>>>>> 0672ed3eafab245cebe677047ef77e25e6364884:time.cpp
 	return out;
 }
 
