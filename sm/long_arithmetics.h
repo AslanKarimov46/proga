@@ -2,16 +2,18 @@
 #define LONG_ARITHMETICS_H
 #include <iostream>
 #include <deque>
+#include <cstdint>
+
 
 class huge_numbers{
 private:
 	std::deque<uint8_t> number;
 
 public:
-	huge_numbers(std::deque<uint8_t> number);
+	huge_numbers(std::deque<uint8_t> num): number{num} {}
 
 };
 
-std::deque<uint8_t> operator+(const huge_numbers& num1, const huge_numbers& num2); 
+huge_numbers operator+(const huge_numbers& num1, const huge_numbers& num2); 
 
 #endif 

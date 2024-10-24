@@ -1,0 +1,3 @@
+/home/stud-11/Desktop/Aslan/proga/proj24_10/cmake-build-debug/CMakeFiles/proj24_10.dir
+/home/stud-11/Desktop/Aslan/proga/proj24_10/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/stud-11/Desktop/Aslan/proga/proj24_10/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -8,6 +8,7 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
@@ -29,6 +30,7 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
   /usr/include/c++/13/bits/ios_base.h \
   /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/iterator_concepts.h \
+  /usr/include/c++/13/bits/list.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
   /usr/include/c++/13/bits/locale_facets.h \
@@ -58,6 +60,7 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_list.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
@@ -79,6 +82,7 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
   /usr/include/c++/13/ext/numeric_traits.h \
@@ -89,6 +93,7 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/list \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
   /usr/include/c++/13/ostream \
@@ -239,13 +244,17 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
-/usr/include/c++/13/exception:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/c++/13/cwctype:
 
 /usr/include/c++/13/bits/memory_resource.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
@@ -283,8 +292,6 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/c++/13/bits/streambuf_iterator.h:
 
-/usr/include/c++/13/debug/debug.h:
-
 /usr/include/c++/13/bits/stl_pair.h:
 
 /usr/include/c++/13/stdexcept:
@@ -321,29 +328,33 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/c++/13/bits/ostream.tcc:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/usr/include/c++/13/bits/ostream_insert.h:
+
 /usr/include/stdc-predef.h:
 
 /usr/include/c++/13/bits/new_allocator.h:
 
-/usr/include/c++/13/bits/char_traits.h:
+/usr/include/c++/13/bits/stl_algobase.h:
 
-/usr/include/c++/13/bits/locale_facets.tcc:
+/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+/usr/include/c++/13/new:
+
+/usr/include/c++/13/ios:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/c++/13/bits/memoryfwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/c++/13/bits/exception.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
-/usr/include/c++/13/bits/ranges_base.h:
-
-/usr/include/c++/13/bits/range_access.h:
-
-/usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
@@ -353,17 +364,23 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
+/usr/include/c++/13/bits/char_traits.h:
+
+/usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/c++/13/bits/range_access.h:
+
+/usr/include/c++/13/bits/localefwd.h:
+
+/usr/include/c++/13/debug/debug.h:
+
 /usr/include/alloca.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/wctype.h:
-
-/usr/include/c++/13/bits/cpp_type_traits.h:
-
-/usr/include/c++/13/bits/alloc_traits.h:
-
-/usr/include/c++/13/bits/exception_defines.h:
+/usr/include/c++/13/bits/stl_list.h:
 
 /usr/include/c++/13/bits/ios_base.h:
 
@@ -399,23 +416,25 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/asm-generic/errno.h:
 
+/usr/include/c++/13/bits/ranges_base.h:
+
+/usr/include/c++/13/bits/streambuf.tcc:
+
+/usr/include/c++/13/bits/allocated_ptr.h:
+
+/usr/include/c++/13/bits/list.tcc:
+
 /usr/include/c++/13/bits/istream.tcc:
 
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/exception_defines.h:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/13/bits/cpp_type_traits.h:
+
 /usr/include/c++/13/bits/cxxabi_forced.h:
-
-/usr/include/c++/13/bits/stl_algobase.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
-
-/usr/include/c++/13/new:
-
-/usr/include/c++/13/ios:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/c++/13/bits/memoryfwd.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/c++/13/bits/charconv.h:
 
@@ -437,6 +456,10 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/c++/13/ext/string_conversions.h:
 
+/usr/include/c++/13/exception:
+
+/usr/include/c++/13/ext/aligned_buffer.h:
+
 /usr/include/c++/13/ext/alloc_traits.h:
 
 /usr/include/errno.h:
@@ -445,13 +468,13 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/c++/13/ext/type_traits.h:
 
-/usr/include/c++/13/bits/ostream_insert.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
 /usr/include/c++/13/iostream:
 
 /usr/include/c++/13/string:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/c++/13/list:
 
 /usr/include/c++/13/bits/postypes.h:
 
@@ -501,13 +524,15 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/stdlib.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
 /usr/include/wchar.h:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
@@ -531,17 +556,11 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
@@ -580,7 +599,3 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:

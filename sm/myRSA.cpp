@@ -1,6 +1,7 @@
 #include <iostream>
 #include <deque>
 #include "long_arithmetics.h"
+#include <cstdint>
 
 //		c=(m^e) mod n 			m=(c^d) mod n
 int pow(int num, int pow){
