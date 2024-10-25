@@ -62,6 +62,7 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_list.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
@@ -106,6 +107,7 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/utility \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -252,9 +254,9 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/c++/13/cwctype:
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
-/usr/include/c++/13/bits/memory_resource.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
@@ -272,8 +274,6 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/c++/13/debug/assertions.h:
 
-/usr/include/c++/13/cctype:
-
 /usr/include/c++/13/bits/utility.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
@@ -283,8 +283,6 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 /usr/include/c++/13/cwchar:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/c++/13/bits/uses_allocator_args.h:
 
@@ -350,6 +348,10 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
+/usr/include/c++/13/bits/memory_resource.h:
+
+/usr/include/c++/13/cwctype:
+
 /usr/include/c++/13/bits/exception.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
@@ -367,8 +369,6 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 /usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/c++/13/bits/locale_facets.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/c++/13/bits/range_access.h:
 
@@ -452,6 +452,8 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 
 /usr/include/c++/13/bits/uses_allocator.h:
 
+/usr/include/c++/13/bits/stl_relops.h:
+
 /usr/include/c++/13/bits/locale_classes.h:
 
 /usr/include/c++/13/ext/string_conversions.h:
@@ -501,6 +503,12 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 /usr/include/c++/13/type_traits:
 
 /usr/include/time.h:
+
+/usr/include/c++/13/cctype:
+
+/usr/include/c++/13/utility:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/ctype.h:
 
@@ -597,5 +605,3 @@ CMakeFiles/project21_10.dir/main.cpp.o: /home/stud-11/Desktop/Aslan/proga/projec
 /usr/include/c++/13/cstdlib:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:

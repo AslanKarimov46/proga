@@ -158,4 +158,5 @@ CMakeFiles/project21_10.dir/main.cpp.o: \
  /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/allocated_ptr.h \
  /usr/include/c++/13/ext/aligned_buffer.h \
- /usr/include/c++/13/bits/list.tcc
+ /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/utility \
+ /usr/include/c++/13/bits/stl_relops.h

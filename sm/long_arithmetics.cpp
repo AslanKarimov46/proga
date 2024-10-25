@@ -46,7 +46,20 @@ bool operator<(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2)
 	return !(num1>num2);
 }
 
+
+bool operator==(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
+	return !( (num1>num2) && (num1<num2) );
+}
+
+
 /*bool operator==(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
+	if( !(num1>num2) && !(num1<num2))
+		return true;
+	else
+		return false;
+}
+
+bool operator==(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
     if(num1.size()!=num2.size()){
         return false;
     }
@@ -60,7 +73,7 @@ bool operator<(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2)
 
 
 std::ostream& operator<<(std::ostream& out, const std::deque<uint8_t>& num){
-	for(int n:num)
+	for(const int n:num)
 		out<<n;
 	return out;
 }
@@ -97,7 +110,7 @@ std::deque<uint8_t> operator*(const std::deque<uint8_t>& num1, const std::deque<
 	std::deque<uint8_t> result;
 	for(int i=0; i!=num2.size(); i++){
 		std::deque<uint8_t> x=num1*num2[i];
-		for(int j=0; j!=i; j++)
+		for(int j=0; j!=num2.size()-1-i; j++)
 			x.push_back(0);
 		result=result+x;
 	}
@@ -105,7 +118,11 @@ std::deque<uint8_t> operator*(const std::deque<uint8_t>& num1, const std::deque<
 }
 
 
-
+/*std::deque<uint8_t> operator/(const std::deque<uint8_t> num1, const std::deque<uint8_t> num2){
+	std::deque<uint8_t> result {0};
+	while()
+	
+}*/
 
 
 

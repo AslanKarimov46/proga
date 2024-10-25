@@ -1,7 +1,6 @@
-#include <iostream>
-#include <deque>
+
 #include "long_arithmetics.h"
-#include <cstdint>
+
 
 //		c=(m^e) mod n 			m=(c^d) mod n
 /*int pow(int num, int pow){
@@ -21,7 +20,7 @@ int unscrumble(int cmessage, int d, int n){
 
 int main(){
 
-	std::deque<uint8_t> n1 ({ 1, 2, 2, 3}), n2 ({1, 2, 3, 7}), n3=n1+n2, n4=n1*n2;
+	std::deque<uint8_t> n1 ({ 1, 2, 2, 3, 5}), n2 ({1, 2, 3, 7}), n3=n1+n2, n4=n1*n2;
 	/*if(n1==n2)
 		std::cout<<"n1==n2"<<"\n";
 	else
@@ -30,9 +29,12 @@ int main(){
 	//std::cout<<unscrumble( scrumble(message, e, n), d, n)<<"\n";
 	//std::cout<<n1<<"\n";
 	//n4=n1*4;
-	int w=1223*1237;
-	std::cout<<w<<"\n"<<n4<<"\n";
-
+	//int w=12235*1237;
+	//std::cout<<"w="<<w<<"\nn4="<<n4<<"\n";
+	if(n1==n2)
+		std::cout<<"n1==n2"<<"\n";
+	else
+		std::cout<<"n1!=n2"<<"\n";
 
 return 0;
 }
