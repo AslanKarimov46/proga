@@ -1,4 +1,3 @@
-
 #include "long_arithmetics.h"
 
 
@@ -20,21 +19,18 @@ int unscrumble(int cmessage, int d, int n){
 
 int main(){
 
-	std::deque<uint8_t> n1 ({ 1, 2, 2, 3, 5}), n2 ({1, 2, 3, 7}), n3=n1+n2, n4=n1*n2;
-	/*if(n1==n2)
-		std::cout<<"n1==n2"<<"\n";
+	std::deque<uint8_t> n1 ({1, 2, 4, 5, 7, 9}), n2 ({2, 1, 2}), n4=n1*n2;
+	//int a=124579%212;
+	//std::cout<<n1%n2<<"\n";
+	if(n1>n2)
+		std::cout<<"n1>n2"<<"\n";
 	else
-		std::cout<<"n1!=n2"<<"\n";*/
-	//int message=15, p=3, q=11, n=p*q, fn=(p-1)*(q-1), e=7, d=(fn+1)/e;
-	//std::cout<<unscrumble( scrumble(message, e, n), d, n)<<"\n";
-	//std::cout<<n1<<"\n";
-	//n4=n1*4;
-	//int w=12235*1237;
-	//std::cout<<"w="<<w<<"\nn4="<<n4<<"\n";
-	if(n1==n2)
-		std::cout<<"n1==n2"<<"\n";
+		std::cout<<"n1<n2"<<"\n";
+
+	if(n1<n2)
+		std::cout<<"n1<n2"<<"\n";
 	else
-		std::cout<<"n1!=n2"<<"\n";
+		std::cout<<"n1>n2"<<"\n";
 
 return 0;
 }
