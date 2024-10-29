@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <vector>
 
 /*class Cat{
 private:
@@ -67,9 +68,9 @@ public:
 	const std::string& GetName() const{
 		return name;
 	}	
-	virtual std::string Voice() const{
-		return "Generic Voice";
-	}
+	virtual std::string Voice() const=0;		//теперь можно присвоить только с помощью наследования 
+		//{return "Generic Voice";}
+	virtual ~Animal() {}
 };
 
 class Cat:public Animal{
@@ -93,9 +94,14 @@ void Process(const Animal& creature){
 }
 
 int main(){
-	Cat c1("Vasya");
-	Dog d1("Sharik");
-	Process(c1);
+	
+	std::vector<Animal*> zoo;
+	zoo.push_back(new Cat("Vasya"));
+	zoo.push_back(new Dog("Sharik"));
+	Process(*zoo[0]);
+	
+	for(Animal* animal:zoo)
+		delete animal;
 	
 return 0;	
 }

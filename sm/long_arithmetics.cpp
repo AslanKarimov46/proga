@@ -58,11 +58,13 @@ bool operator>(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2)
 		return false;
 	else{
 		for(int i=0; i!=size1; i++){
+			if(num1[i]>num2[i])
+				return true;
 			if(num1[i]<num2[i])
 				return false;
 		}
 	}
-	return true;
+	return false;
 }
 
 
@@ -148,79 +150,35 @@ std::deque<uint8_t> operator%(const std::deque<uint8_t>& num1, const std::deque<
 	
 	if(num1<num2)
 		return num1;
-	a=part(num_1, 0, num2.size()-1);
-	if(a>num2)
-		std::cout<<"ok\n"<<a<<"\n";
-	if(a<num2){
-		a=part(num_1, 0, num2.size());
-	}
 	
-	std::cout<<"a="<<a<<"\n";
-	/*while(num_1>num2){
 
-
+	while(num_1>=num2){
+		if(num_1==num2)
+			return {0};
+		
+		a=part(num_1, 0, num2.size()-1);
+		if(a<num2)
+			a=part(num_1, 0, num2.size());
+		std::cout<<"a="<<a<<"\n";
 		for(int i=1; i!=9; i++){
 			
 			if( num2*i<a && num2*(i+1)>a ){
-
+			std::cout<<"i="<<i<<"\n"<<"b=num2*i="<<num2*i<<"\n";
 				b=num2*i;
 				while( b.size()!=num_1.size() )
 					b.push_front(0);
-
+				std::cout<<"b="<<b<<"\n";
 				num_1=num_1-b;
+				std::cout<<"num_1-b="<<num_1<<"\n";
 
 			}
 
 		}
 
 
-	}*/
+	}
 	return num_1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*	*/
-
-
-
-
-
-/*    while (num_1 > num2) {
-        // Извлечение части числа
-        a = part(num_1, 0, num2.size());
-        if (a < num2 && num2.size() < num_1.size())
-            a = part(num_1, 0, num2.size() + 1);
-
-        for (int i = 1; i <= 9; ++i) {
-            if (num2 * i <= a && num2 * (i + 1) > a) {
-                b = num2 * i;
-
-                // Дополнение нулями для правильного вычитания
-                while (b.size() < num_1.size())
-                    b.push_front(0);
-
-                num_1 = num_1 - b;
-                break;
-            }
-        }
-    }*/
-
-
 
 
 

@@ -19,19 +19,10 @@ int unscrumble(int cmessage, int d, int n){
 
 int main(){
 
-	std::deque<uint8_t> n1 ({1, 2, 4}), n2 ({4, 1, 2});
-	//int a=124579%412;
-	//std::cout<<n1%n2<<"\n";
+	std::deque<uint8_t> n1 ({1, 2, 4, 5, 7, 9}), n2 ({4, 1, 2});
+	int a=124579%412;
+	std::cout<<a<<"\n"<<n1%n2<<"\n";
 	
-	if(n1>n2)
-		std::cout<<"n1>n2"<<"\n";
-	else
-		std::cout<<"n1<n2"<<"\n";
-
-	if(n1<n2)
-		std::cout<<"n1<n2"<<"\n";
-	else
-		std::cout<<"n1>n2"<<"\n";
 
 return 0;
 }
