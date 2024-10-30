@@ -19,10 +19,32 @@ int unscrumble(int cmessage, int d, int n){
 
 int main(){
 
-	std::deque<uint8_t> n1 ({1, 2, 4, 5, 7, 9}), n2 ({4, 1, 2});
-	int a=124579%412;
-	std::cout<<a<<"\n"<<n1%n2<<"\n";
-	
+	std::deque<uint8_t> 
+	n1=str_to_deq("4988371234"), 
+	n2=str_to_deq("578");
+
+	long long int a=4988371200/578;
+	std::cout<<n1/n2<<"\n"<<"a="<<a<<"\n";
+
+	/*char symbol;
+	std::ifstream in("message.txt");
+	std::ofstream out("scrumbled_message.txt");
+
+	while(in>>symbol){
+
+	}
+
+	in.close();
+	out.close();
+
+
+	std::ifstream in("scrumbled_message.txt");
+	std::ofstream out("unscrumbled_message.txt");
+
+
+	in.close();
+	out.close();*/
+
 
 return 0;
 }

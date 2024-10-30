@@ -60,7 +60,7 @@ bool operator>(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2)
 		for(int i=0; i!=size1; i++){
 			if(num1[i]>num2[i])
 				return true;
-			if(num1[i]<num2[i])
+			else if(num1[i]<num2[i]) 
 				return false;
 		}
 	}
@@ -69,7 +69,10 @@ bool operator>(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2)
 
 
 bool operator<(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
-	return !(num1>num2);
+	if(num1==num2)
+		return false;
+	else
+		return !(num1>num2);
 }
 
 
@@ -145,40 +148,151 @@ std::deque<uint8_t> part(const std::deque<uint8_t>& num, int begin, int end){
 }
 
 
+std::deque<uint8_t> str_to_deq(const std::string& str){
+	std::deque<uint8_t> result;
+	for(int i=0; i!=str.size(); i++)
+		result.push_back(str[i]-'0');
+	return result;
+}
+
 std::deque<uint8_t> operator%(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
 	std::deque<uint8_t> num_1=num1, a, b;
+	//std::cout<<"num_1="<<num_1<<"\n"<<"num1="<<num1<<"\n"<<"num2="<<num2<<"\n";
 	
-	if(num1<num2)
+	if(num1<num2){
 		return num1;
-	
+	}
 
-	while(num_1>=num2){
-		if(num_1==num2)
-			return {0};
-		
-		a=part(num_1, 0, num2.size()-1);
-		if(a<num2)
-			a=part(num_1, 0, num2.size());
-		std::cout<<"a="<<a<<"\n";
-		for(int i=1; i!=9; i++){
-			
-			if( num2*i<a && num2*(i+1)>a ){
-			std::cout<<"i="<<i<<"\n"<<"b=num2*i="<<num2*i<<"\n";
+	while(num_1>num2 || num_1==num2){
+	//std::cout<<"начался while\n";
+	if(num_1==num2){
+		//std::cout<<"выполнилось условие num_1==num2\n";
+		return {0};
+	}
+	uint8_t flaq=0;
+
+	a=part(num_1, 0, num2.size()-1);
+	if(a<num2){ 
+		a=part(num_1, 0, num2.size());
+		flaq=1;
+	}
+	//std::cout<<"a="<<a<<"\n";
+
+		for(int i=1; i!=10; i++){
+			//std::cout<<"начался цикл for\n";
+			if( (num2*i<a || num2*i==a) && num2*(i+1)>a ){
+				//std::cout<<"i="<<i<<"\n";
+				//std::cout<<"влез в if\n";
 				b=num2*i;
-				while( b.size()!=num_1.size() )
-					b.push_front(0);
-				std::cout<<"b="<<b<<"\n";
+				//std::cout<<"b="<<b<<"\n";
+
+				for(int i=0; i!=num_1.size()-a.size(); i++)
+					b.push_back(0);
+				
+				//std::cout<<"b="<<b<<"\n";
+				//std::cout<<"num_1="<<num_1<<"-"<<b<<"=";
+				
 				num_1=num_1-b;
-				std::cout<<"num_1-b="<<num_1<<"\n";
-
+				//std::cout<<num_1<<"\n";
 			}
-
+			
 		}
-
-
+		//std::cout<<"\n";
+		//break;
 	}
 	return num_1;
 }
+
+
+std::deque<uint8_t> operator/(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
+	std::deque<uint8_t> num_1=num1-num1%num2, result, a, b;
+	int amount_of_0=0;
+	//std::cout<<"num_1="<<num_1<<"\n"<<"num1="<<num1<<"\n"<<"num2="<<num2<<"\n";
+	for(int i=num_1.size()-1; i!=-1; i--){
+		std::cout<<num_1[3]<<"\n";
+		if(num_1[i]==0){
+			num_1.pop_back();
+			amount_of_0++;
+		}
+		if(num_1[i-1]!=0)
+			break;
+	}
+
+	//std::cout<<"amount of 0= "<<amount_of_0<<"\n";
+
+	if(num1<num2){
+		return {0};
+	}
+
+	while(num_1>num2 || num_1==num2){
+	if(num_1==num2){
+		return {1};
+	}
+	uint8_t flaq=0;
+
+	a=part(num_1, 0, num2.size()-1);
+	if(a<num2){ 
+		a=part(num_1, 0, num2.size());
+		flaq=1;
+	}
+
+		for(int i=1; i!=10; i++){
+			
+			if( (num2*i<a || num2*i==a) && num2*(i+1)>a ){
+				std::cout<<"i="<<i<<"\n";
+				
+
+				result.push_back(i);				
+				b=num2*i;
+				std::cout<<"b="<<b<<"\n";
+
+				for(int i=0; i!=num_1.size()-a.size(); i++)
+					b.push_back(0);
+				
+				std::cout<<"b="<<b<<"\n";
+				std::cout<<"num_1="<<num_1<<"-"<<b<<"=";
+				
+				num_1=num_1-b;
+				std::cout<<num_1<<"\n";
+			}
+			
+		}
+		std::cout<<"\n";
+	}
+	for(int i=0; i!=amount_of_0; i++)
+		result.push_back(0);
+	return result;
+}
+
+
+std::deque<uint8_t> int_to_deq(const int num){
+	std::deque<uint8_t> result;
+	int n=num;
+	while(n!=0){
+		result.push_front(n%10);
+		n/=10;
+	}
+	return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
