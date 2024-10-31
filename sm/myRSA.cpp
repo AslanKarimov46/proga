@@ -20,11 +20,12 @@ int unscrumble(int cmessage, int d, int n){
 int main(){
 
 	std::deque<uint8_t> 
-	n1=str_to_deq("4988371234"), 
-	n2=str_to_deq("578");
+	n1=str_to_deq("123"), 
+	n2=str_to_deq("5");
 
-	long long int a=4988371200/578;
-	std::cout<<n1/n2<<"\n"<<"a="<<a<<"\n";
+	//long long int a=4988370001200/578;
+	//std::cout<<n1/n2<<"\n"<<"a="<<a<<"\n";
+	std::cout<<pow_mod(n1, n2, {40})<<"\n";
 
 	/*char symbol;
 	std::ifstream in("message.txt");

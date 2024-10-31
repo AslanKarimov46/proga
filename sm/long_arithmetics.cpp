@@ -205,8 +205,8 @@ std::deque<uint8_t> operator%(const std::deque<uint8_t>& num1, const std::deque<
 
 
 std::deque<uint8_t> operator/(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
-	std::deque<uint8_t> num_1=num1-num1%num2, result, a, b;
-	int amount_of_0=0;
+	std::deque<uint8_t> num_1=num1-num1%num2, result, a, b, deq0={0};
+	int amount_of_0=0, size1, size2;
 	//std::cout<<"num_1="<<num_1<<"\n"<<"num1="<<num1<<"\n"<<"num2="<<num2<<"\n";
 	for(int i=num_1.size()-1; i!=-1; i--){
 		std::cout<<num_1[3]<<"\n";
@@ -240,10 +240,10 @@ std::deque<uint8_t> operator/(const std::deque<uint8_t>& num1, const std::deque<
 			
 			if( (num2*i<a || num2*i==a) && num2*(i+1)>a ){
 				std::cout<<"i="<<i<<"\n";
-				
 
 				result.push_back(i);				
 				b=num2*i;
+				size1=num_1.size();
 				std::cout<<"b="<<b<<"\n";
 
 				for(int i=0; i!=num_1.size()-a.size(); i++)
@@ -253,7 +253,13 @@ std::deque<uint8_t> operator/(const std::deque<uint8_t>& num1, const std::deque<
 				std::cout<<"num_1="<<num_1<<"-"<<b<<"=";
 				
 				num_1=num_1-b;
-				std::cout<<num_1<<"\n";
+				size2=num_1.size();
+
+				/*for(int i=0; i!=size1-size2-1; i++){
+					if(num_1!=deq0)
+						result.push_back(0);
+				}*/
+				std::cout<<num_1<<"\n"<<"result="<<result<<"\n";
 			}
 			
 		}
@@ -275,12 +281,17 @@ std::deque<uint8_t> int_to_deq(const int num){
 	return result;
 }
 
-
-
-
-
-
-
+//		c=(x^y) mod n
+std::deque<uint8_t> pow_mod(std::deque<uint8_t> x, std::deque<uint8_t> y, std::deque<uint9_t> mod){
+	std::deque<uint8_t> result, x_1;
+	
+	for(std::deque<uint8_t> i={0}; i!=y; i=i+{1})
+		x_1=x_1*x;
+	
+	result=x_1%mod;
+	
+	return result;
+}
 
 
 

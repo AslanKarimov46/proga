@@ -1,7 +1,7 @@
 #include <iostream>
 #include <deque>
-//#include <cstdint>
-//#include <algorithm>
+#include <cstdint>
+#include <algorithm>
 #include <string>
 #include <fstream>
 
@@ -20,4 +20,6 @@ std::deque<uint8_t> part(const std::deque<uint8_t>& num, int begin, int end);
 std::deque<uint8_t> str_to_deq(const std::string& str);
 std::deque<uint8_t> operator/(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2);
 std::deque<uint8_t> int_to_deq(const int num);
+std::deque<uint8_t> pow_mod(std::deque<uint8_t> x, std::deque<uint8_t> y, std::deque<uint9_t> mod);
+
 
