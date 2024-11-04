@@ -18,6 +18,11 @@ namespace chron{
 		int TotalSeconds() const;
 		void AddSeconds(int s);	
 		Time& operator+=(int s);
+		class IncorrectTimeException{};
+		Time::Time(int h, int m, int s){
+			if(s<0||s>59||m<0||m>59||h<0||h>23)
+				throw IncorrectTimeException();
+		}
 
 	};
 	Time operator+(const Time&t, int s);

@@ -12,7 +12,7 @@ int main(){
 	fn=(p2-deq1)*(q2-deq1), e1=str_to_deq("17"), e2=str_to_deq("257"), e3=str_to_deq("65537"), 
 	e, d=d_finder(fn, e1), mes, scrumbled_mes, unscrumbled_mes;
 
-	std::string message="hello";
+	std::string message="hello world, I'm crocodile46";
 	for(int i=0; i!=message.size(); i++){
 		char j=deq_to_int(unscrumble( scrumble(int_to_deq(message[i]), e1, n), d, n));
 		std::cout<<j;
