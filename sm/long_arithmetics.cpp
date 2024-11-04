@@ -156,17 +156,13 @@ std::deque<uint8_t> str_to_deq(const std::string& str){
 }
 
 std::deque<uint8_t> operator%(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
-	std::deque<uint8_t> num_1=num1, a, b;
-	//std::cout<<"num_1="<<num_1<<"\n"<<"num1="<<num1<<"\n"<<"num2="<<num2<<"\n";
-	
+	std::deque<uint8_t> num_1=num1, a, b;	
 	if(num1<num2){
 		return num1;
 	}
 
 	while(num_1>num2 || num_1==num2){
-	//std::cout<<"начался while\n";
 	if(num_1==num2){
-		//std::cout<<"выполнилось условие num_1==num2\n";
 		return {0};
 	}
 	uint8_t flaq=0;
@@ -176,98 +172,53 @@ std::deque<uint8_t> operator%(const std::deque<uint8_t>& num1, const std::deque<
 		a=part(num_1, 0, num2.size());
 		flaq=1;
 	}
-	//std::cout<<"a="<<a<<"\n";
 
 		for(int i=1; i!=10; i++){
-			//std::cout<<"начался цикл for\n";
 			if( (num2*i<a || num2*i==a) && num2*(i+1)>a ){
-				//std::cout<<"i="<<i<<"\n";
-				//std::cout<<"влез в if\n";
 				b=num2*i;
-				//std::cout<<"b="<<b<<"\n";
-
 				for(int i=0; i!=num_1.size()-a.size(); i++)
 					b.push_back(0);
-				
-				//std::cout<<"b="<<b<<"\n";
-				//std::cout<<"num_1="<<num_1<<"-"<<b<<"=";
-				
 				num_1=num_1-b;
-				//std::cout<<num_1<<"\n";
-			}
-			
+			}	
 		}
-		//std::cout<<"\n";
-		//break;
 	}
 	return num_1;
 }
 
 
-std::deque<uint8_t> operator/(const std::deque<uint8_t>& num1, const std::deque<uint8_t>& num2){
-	std::deque<uint8_t> num_1=num1-num1%num2, result, a, b, deq0={0};
-	int amount_of_0=0, size1, size2;
-	//std::cout<<"num_1="<<num_1<<"\n"<<"num1="<<num1<<"\n"<<"num2="<<num2<<"\n";
-	for(int i=num_1.size()-1; i!=-1; i--){
-		std::cout<<num_1[3]<<"\n";
-		if(num_1[i]==0){
-			num_1.pop_back();
-			amount_of_0++;
-		}
-		if(num_1[i-1]!=0)
-			break;
-	}
+std::deque<uint8_t> operator/(const std::deque<uint8_t>& lhs, const std::deque<uint8_t>& rhs){
 
-	//std::cout<<"amount of 0= "<<amount_of_0<<"\n";
+    std::deque<uint8_t> quotient;           //частное
+    std::deque<uint8_t> remainder;          //отстаток
 
-	if(num1<num2){
-		return {0};
-	}
+    for(int i=0; i<lhs.size(); i++){
+        remainder.push_back(lhs[i]);
 
-	while(num_1>num2 || num_1==num2){
-	if(num_1==num2){
-		return {1};
-	}
-	uint8_t flaq=0;
+        while(!remainder.empty() && remainder.front()==0){
+            remainder.pop_front();
+        }
+        if(remainder<rhs){
+            quotient.push_back(0);
+            continue;
+        }
+        int low=0, high=9, best_factor=0;
+        while((low<high) || (low==high)){
+            int mid=(low+high)/2;
+            std::deque<uint8_t> mid_product=rhs*mid;
+            if((mid_product<remainder) || (mid_product==remainder)){
+                best_factor=mid;
+                low=mid+1;
+            }else
+                high=mid-1;
+        }
+        quotient.push_back(best_factor);
+        remainder=remainder-rhs*best_factor;
+    }
+    while(quotient.size()>1 && quotient.front()==0){
+        quotient.pop_front();
+    }
 
-	a=part(num_1, 0, num2.size()-1);
-	if(a<num2){ 
-		a=part(num_1, 0, num2.size());
-		flaq=1;
-	}
-
-		for(int i=1; i!=10; i++){
-			
-			if( (num2*i<a || num2*i==a) && num2*(i+1)>a ){
-				std::cout<<"i="<<i<<"\n";
-
-				result.push_back(i);				
-				b=num2*i;
-				size1=num_1.size();
-				std::cout<<"b="<<b<<"\n";
-
-				for(int i=0; i!=num_1.size()-a.size(); i++)
-					b.push_back(0);
-				
-				std::cout<<"b="<<b<<"\n";
-				std::cout<<"num_1="<<num_1<<"-"<<b<<"=";
-				
-				num_1=num_1-b;
-				size2=num_1.size();
-
-				/*for(int i=0; i!=size1-size2-1; i++){
-					if(num_1!=deq0)
-						result.push_back(0);
-				}*/
-				std::cout<<num_1<<"\n"<<"result="<<result<<"\n";
-			}
-			
-		}
-		std::cout<<"\n";
-	}
-	for(int i=0; i!=amount_of_0; i++)
-		result.push_back(0);
-	return result;
+    return quotient;
 }
 
 
@@ -281,15 +232,110 @@ std::deque<uint8_t> int_to_deq(const int num){
 	return result;
 }
 
-//		c=(x^y) mod n
-std::deque<uint8_t> pow_mod(std::deque<uint8_t> x, std::deque<uint8_t> y, std::deque<uint9_t> mod){
-	std::deque<uint8_t> result, x_1;
-	
-	for(std::deque<uint8_t> i={0}; i!=y; i=i+{1})
-		x_1=x_1*x;
-	
-	result=x_1%mod;
-	
+
+//(x^y) mod n, a_1=x mod n, a_2=(a_1*a_1) mod n, a_3=(a_2*a_1) mod n, ..., a_y=(a_(y-1)*a_1) mod n
+std::deque<uint8_t> pow_mod(const std::deque<uint8_t>& x, 
+										const std::deque<uint8_t>& y, const std::deque<uint8_t>& n){
+	std::deque<uint8_t> result, deq0={0}, binary_y=binary_deq(y), a, b=x%n;
+	std::deque< std::deque<uint8_t> > x_pow_y_mod_n;
+	//std::cout<<"binary_y="<<binary_y<<"\n";
+	x_pow_y_mod_n.push_back(b);
+	//std::cout<<"x_pow_y_mod_n[0]="<<x_pow_y_mod_n[0]<<"\n";
+	for(int i=1; i!=binary_y.size(); i++){
+		a=((*x_pow_y_mod_n.rbegin())*(*x_pow_y_mod_n.rbegin()))%n;
+		x_pow_y_mod_n.push_back(a);
+		//std::cout<<"x_pow_y_mod_n["<<i<<"]="<<x_pow_y_mod_n[i]<<"\n";
+	}
+
+	/*for(int i=0; i!=binary_y.size(); i++)
+		std::cout<<x_pow_y_mod_n[i]<<"  ";
+	std::cout<<"\n";*/
+
+	for(int i=binary_y.size()-1; i!=-1; i--){
+		if(binary_y[i]==0){
+			x_pow_y_mod_n[binary_y.size()-1-i]={1};
+		}
+	}
+	result=x_pow_y_mod_n[0];
+
+	/*for(int i=0; i!=binary_y.size(); i++)
+		std::cout<<x_pow_y_mod_n[i]<<"  ";
+	std::cout<<"\n";*/
+
+	for(int i=1; i!=binary_y.size(); i++){
+		result=(result*x_pow_y_mod_n[i])%n;
+	}
+
+	return result;
+}
+
+
+std::deque<uint8_t> binary_deq(const std::deque<uint8_t>& n){
+    std::deque<uint8_t> number=n;
+    std::deque<uint8_t> result;
+
+    while (!number.empty() && !(number.size()==1 && number[0]==0)){
+        uint8_t remainder=0;
+        for (size_t i=0; i<number.size(); ++i){
+            uint8_t current=remainder*10+number[i];
+            number[i]=current/2;
+            remainder=current%2;
+        }
+
+        result.push_front(remainder);
+
+        while (!number.empty() && number.front() == 0) {
+            number.pop_front();
+        }
+    }
+
+    return result;
+}
+
+
+std::deque<uint8_t> d_finder(const std::deque<uint8_t>& fn, const std::deque<uint8_t>& e){
+	std::deque<uint8_t> k={1}, deq1={1}, deq0={0};
+	while( (k*fn+deq1)%e!=deq0 ){
+		k=k+deq1;
+		//std::cout<<k<<"\n";
+	}
+	return (k*fn+deq1)/e;
+}
+
+
+std::deque<uint8_t> scrumble(const std::deque<uint8_t>& m, 
+										const std::deque<uint8_t>& e, const std::deque<uint8_t>& n){
+	return pow_mod(m, e, n);
+}
+
+
+std::deque<uint8_t> unscrumble(const std::deque<uint8_t>& c, 
+										const std::deque<uint8_t>& d, const std::deque<uint8_t>& n){
+	return pow_mod(c, d, n);
+}
+
+
+
+/*std::deque<std::deque<uint8_t>> scrumble(const std::string message, 
+										const std::deque<uint8_t>& e, const std::deque<uint8_t>& n){
+	std::deque<std::deque<uint8_t>> result;
+	for(int i=0; i!=message.size(); i++){
+		result
+	}
+}
+
+
+std::string unscrumble(const std::deque<uint8_t>& scrumbled_message, 
+										const std::deque<uint8_t>& d, const std::deque<uint8_t>& n){
+
+}*/
+
+
+int deq_to_int(const std::deque<uint8_t>& num){
+	int result=0;
+	for(int i=num.size()-1; i!=-1; i--){
+		result+=num[i]*pow(10, num.size()-i-1);
+	}
 	return result;
 }
 
