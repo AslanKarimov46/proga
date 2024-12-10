@@ -1,7 +1,4 @@
-#include <iostream>
-#include <cmath>
-#include <vector>
-#include <cstring>
+#include "calc.h"
 // 0+12+45+49- 13*79*46 +13
 
 void yourself(int a, int b, char op){
@@ -10,7 +7,7 @@ void yourself(int a, int b, char op){
 
 
 int main(){
-	int a, b, result=0, result_=1;
+	int a;
 	std::string op;
 	std::vector<int> numbers;
 	std::string operations;
@@ -26,13 +23,14 @@ int main(){
 	for(auto i: operations)
 		std::cout<<i<<" ";
 	
-	/*while(std::cin>>a>>op>>b){
-		if(op=='+')
-			result+=(a+b);
-		if(op=='-')
-			result+=(a-b);
-	}
-	std::cout<<"\n"<<result<<"\n";*/
+	func(numbers, operations);
+	
+	for(auto i: numbers)
+		std::cout<<i<<" ";
+		
+	for(auto i: operations)
+		std::cout<<i<<" ";	
+
 	
 return 0;	
 }
