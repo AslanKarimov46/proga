@@ -1,3 +1,4 @@
+/*https://hetmanrecovery.com/ru/recovery_news/bios-audio-signals.htm*/
 #include <iostream>
 #include <thread>
 #include <mutex>
